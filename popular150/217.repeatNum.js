@@ -1,6 +1,9 @@
+// 217. 存在重复元素
 // 判断数组中是否存在重复的值
 
 // 思路 用一个临时对象 存储 key 是数字的值 ， value 是数字出现的次数。当次数>1 则中断循环 返回false
+// https://leetcode-cn.com/problems/contains-duplicate/
+
 
 function hasDupliteNum( array ){
     if(array.length < 2){
