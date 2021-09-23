@@ -23,3 +23,31 @@ var generate = function(numRows) {
     }
     return result;
 };
+
+
+// 稍作优化
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function (numRows) {
+    let result = [[1]];
+    for (let i = 1; i < numRows; i++) {
+        let current = [];
+        let half = Math.floor(i / 2); // 中心点 0
+        for (let j = 0; j <= half; j++) {
+            let count = 1;
+            if (j > 0) {
+                let left = result[i - 1][j - 1] || 0;
+                let right = result[i - 1][j] || 0;
+                count = left + right;
+            }
+            current[j] = count;
+            current[i - j] = count;
+        }
+
+        result[i] = current;
+    }
+
+    return result;
+};
