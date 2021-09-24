@@ -13,15 +13,15 @@
  * @param {string[]} strs
  * @return {string}
  */
-var longestCommonPrefix = function(strs) {
+var longestCommonPrefix = function (strs) {
     let target = strs[0];
     let res = '';
-    for(let i = 0 ;i<target.length;i++){
-        if(strs.every(str=>{
+    for (let i = 0; i < target.length; i++) {
+        if (strs.every(str => {
             return str[i] === target[i];
-        })){
+        })) {
             res += target[i];
-        }else{
+        } else {
             break;
         }
     }
