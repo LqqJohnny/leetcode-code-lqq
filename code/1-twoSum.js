@@ -25,7 +25,7 @@ var twoSum = function(nums, target) {
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+var twoSum2 = function(nums, target) {
     var ret= [];
     nums.forEach(function(num,idx){
 		var minus = target- num;
