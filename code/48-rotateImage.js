@@ -4,7 +4,7 @@
  */
 var rotate = function(matrix) {
     var len = matrix.length;
-    var rotated = JSON.parse(JSON.stringify(matrix));;
+    var rotated = JSON.parse(JSON.stringify(matrix));
     for(var i = 0 ;i<len ;i++){
         for(var j = 0 ;j<len;j++){
             matrix[j][len-1-i] = rotated[i][j];
