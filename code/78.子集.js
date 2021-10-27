@@ -1,6 +1,6 @@
 // https://leetcode-cn.com/problems/subsets/
 
-// failed
+// 递归 subsets(n) = subsets(n - 1) 和 n 的排列组合
 
 
 /**
@@ -8,20 +8,20 @@
  * @return {number[][]}
  */
 var subsets = function (nums) {
-    let  result = [[]];
-    for (let i = 0; i < nums.length; i++) {
-        let tempArr = [nums[i]];
-        result.push(tempArr);
-        for (let j = i + 1; j < nums.length; j++) {
-            tempArr.push(nums[j]);
-            console.log(nums[i], nums[j], tempArr);
-            result.push(tempArr);
-        }
+    let  result = []
+    if (nums.length === 0){
+        return [result]
     }
+    let lastNumber = nums.pop()
+    let prevResult = subsets(nums)
+    prevResult.forEach(res=>{
+        result.push(res)
+        result.push([...res, lastNumber])
+    })
 
     return result;
 };
 
 
 let arr = [1, 2, 3];
-console.log(subsets(arr));
+// console.log(subsets(arr));
