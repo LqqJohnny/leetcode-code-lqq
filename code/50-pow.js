@@ -20,7 +20,7 @@ var myPow = function(x, n) {
  * 这个 小技巧 是重点
  */
 
-var myPow = function(x, n) {
+var myPow2 = function(x, n) {
     if(n==0){return 1;}
     if(n<0){
         x=1/x;
