@@ -3,7 +3,7 @@
 // 随意取一个数作为 基准， 循环数组 ， 将比基准小的数 放在左边 ， 比基准大的数放在右边。 
 // 然后递归 处理 基准左右两个区域
 
-let array = [11, 2, 3, 13, 34, 12, 1, 31]
+let array = [3,1,2,4,4,5]
 
 
 // 简单易懂 ， 但是效率不高，时间复杂度稍高
@@ -45,7 +45,7 @@ function quickSort2(array, left = 0, right = array.length - 1) {
 
     return array;
 }
-
+// 312445
 function patition(array, left, right) {
     let pivot = array[left]
     let i = left, j = right;
@@ -60,12 +60,10 @@ function patition(array, left, right) {
         swap(array, i, j);
     }
     swap(array, left, i);
+    console.log(array, i, j);
 
     return i;
 }
-
-console.log(quickSort2(array.slice()));
-
 
 // 工具函数 -- 交换位置
 function swap(A, i, j) {
@@ -73,3 +71,6 @@ function swap(A, i, j) {
     A[i] = A[j];
     A[j] = t;
 }
+
+
+console.log(quickSort2(array.slice()));
